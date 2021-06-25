@@ -1,0 +1,36 @@
+.custom-input-group{
+    height: 140px;
+    position: relative;
+    box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+    border-radius: 25px;
+}
+
+.custom-input-group input{
+    border-radius: 25px;
+    border: 0;
+    box-shadow: none;
+    height: 100%;
+    width: 100%;
+    font-size: 28px;
+    line-height: 42px;
+    color: #B8B8B8;
+    font-weight: 600;
+    padding: 50px 40px;
+}
+
+.custom-input-group span{
+    display: block;
+}
+
+.searchIcon{
+    position: absolute;
+    height: 100%;
+    width: 56px;
+    top: 0;
+    right: 0;
+    border-radius: 25px;
+    background: linear-gradient(160deg, #5374E7 0%, #77B9F5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

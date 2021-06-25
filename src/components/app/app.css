@@ -1,0 +1,10 @@
+.miniatureContainer div{
+    margin-top: 10px;
+}
+
+.add-city-label{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    color: #01175F;
+}

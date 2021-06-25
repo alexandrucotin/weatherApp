@@ -1,0 +1,68 @@
+.todays-weather{
+    border-radius: 35px;  
+    box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+    background: linear-gradient(160deg, #5374E7 0%, #77B9F5 100%);
+    padding: 30px;
+    max-height: 385px;
+    overflow: hidden;
+    overflow-y: scroll;
+    position: relative;
+
+
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+
+.line-through{
+    position: absolute;
+    width: 2%;
+    height: 100%;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255,255,255,0) 100%);
+    top:77px;
+    left : calc(50% - 1%);
+}
+
+.now {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+.big-temp {
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: right;
+  }
+
+.small-temp {
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 300;
+    text-align: right;
+  }
+
+
+.small-bullet{
+    border-radius: 50%;
+    height: 20.21px;
+    width: 20px;
+    background-color: #FFFFFF;
+}
+
+.big-bullet{
+    border-radius: 50%;
+    height: 30.31px;
+    width: 30px;
+    background-color: #FFFFFF;
+}
+.time {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+  }

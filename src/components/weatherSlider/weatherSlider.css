@@ -1,0 +1,66 @@
+.future-forecast{
+    box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+    background: linear-gradient(160deg, #5374E7 0%, #77B9F5 100%);
+    border-radius:  0 35px 35px 35px;
+    padding: 25px;
+}
+
+.first-layer{
+    position:absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius:  35px 35px 0 0  ;
+    z-index: 1;
+}
+
+.nav{
+background-color: white;
+border-radius: 35px 35px 0 0 ;
+width: fit-content;
+}
+
+.nav-item{
+    padding: 20px;
+    color: #01175F;
+    background-color: white;
+    font-size: 28px;
+    font-weight: 600;
+    border-radius: 0 35px 0 0;
+    z-index: 2;
+}
+
+.nav-item-active{
+    background-color: #5374E7;
+    color: white;
+    border-radius:  35px 35px 0 0 ;
+}
+
+.forecast-item{
+    padding:20px;
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.1);
+    box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forecast-day{
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    height: 100px;
+}
+
+.forecast-temp{
+    color: #FFFFFF;
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+}
