@@ -1,0 +1,51 @@
+.miniatureCity{
+    height: 140px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+    background: linear-gradient(160deg, #011354 0%, #5B9FE3 100%);
+    box-shadow: 5px 10px 20px 0 rgba(0,0,0,0.17);
+    padding: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+
+    .minCity-temp{
+        display: flex;
+        .temperature{
+            font-size: 50px;
+            line-height: 76px;
+            font-weight: bold;
+            color: white;
+        }
+    }
+
+    .minCity-details{ 
+        color: white;
+        h2{
+            font-size: 26px;
+            line-height: 39px;
+            font-weight: 600;
+        }
+        .date{
+            font-size: 15px;
+            line-height: 18px;
+            text-align: left;
+            font-weight: 500;
+        }
+        .hours{
+            font-size: 12px;
+            line-height: 18px;
+            text-align: left;
+            font-weight: 300;
+            margin-top: 12px;
+        }
+    }
+  }
+
+  .small-city-black{
+    .miniatureCity{
+        background: linear-gradient(160deg, #464C64 0%, #99A9B9 100%);
+    }
+  }

@@ -1,29 +1,26 @@
-import "./miniatureCity.css";
+import "./miniatureCity.scss";
+import Moment from 'react-moment';
+import 'moment-timezone';
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux"
+import { actions } from '../../store/index'
 
-const SmallCity = ({city, weather}) => {
+const SmallCity = ({ city }) => {
 
-  function formatDate () {
-    const today = new Date();
-    const weekDays= ['Sunday', 'Monday', 'Tuesday','Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"];
-    const date = `${weekDays[today.getDay()]} ${today.getDate()}, ${monthNames[today.getMonth()]}`;
-    
-    return date
-  }
-
+    const dispatch = useDispatch()
+    const { changeCurrentCity } = bindActionCreators(actions, dispatch)
     return (
-        <div className="miniatureCity">
+        <div className="miniatureCity" onClick={(e) => changeCurrentCity(city)}>
             <div className="minCity-details">
-                    <h2>{city}</h2>
-                    <div className="date">{formatDate()}</div>
-                    <div className="hours">2:38pm</div>
-                </div>
+                <h2>{city.cityInfo.results[0].formatted_address.split(",")[0]}</h2>
+                <div className="date"><Moment date={city.current.dt * 1000} format="D MMM YYYY" /> </div>
+                <div className="hours"><Moment date={city.current.dt * 1000} format="h:mm a" /> </div>
+            </div>
             <div className="minCity-icon">
-                <img src={`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`} alt="weather icon" />
+                <img src={`http://openweathermap.org/img/w/${city.current.weather[0].icon}.png`} alt="weather icon" />
             </div>
             <div className="minCity-temp">
-                <div className="temperature">{Math.round(weather.main.temp)}&deg;</div>
+                <div className="temperature">{Math.round(city.current.temp)}&deg;</div>
             </div>
         </div>
     )

@@ -1,0 +1,42 @@
+.miniature-row { 
+    overflow-y: scroll;
+    max-height: 440px;
+
+    @media (max-width: 1024px) {
+    max-height: none;
+    }
+    .miniature-container{
+        margin-top: 10px;
+    }
+}
+
+.add-city-container{
+    cursor: pointer;
+
+    .add-city-label{
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 600;
+        color: #01175F;
+    }
+}
+
+.spinner{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgba(211, 211, 211, 0.473);
+    z-index: 9999999999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+
+.close-button{
+    font-size: 18px;
+    font-weight: bold;
+    cursor:pointer
+}

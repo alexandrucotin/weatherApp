@@ -61,8 +61,10 @@
     background-color: #FFFFFF;
 }
 .time {
+    display: flex;
+    align-items: center;
     color: #FFFFFF;
     font-size: 20px;
     font-weight: 300;
-    text-align: center;
+    text-align: left;
   }
