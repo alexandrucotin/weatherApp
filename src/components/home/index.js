@@ -20,15 +20,16 @@ const HomeComponent = () => {
     const state = useSelector((state) => state);
 
     return (
-        <Fragment>
+        <div className="container">
             <div className="row gx-lg-5 align-items-end">
                 <div className="col-lg-12 col-xl-8 d-none d-lg-block">
                     <LargeCity />
                 </div>
                 <div className="col-xs-12 mt-lg-4 mt-xl-0 offset-lg-2 offset-xl-0 col-lg-8 col-xl-4  miniature-row">
-                    <div className="row  p-3 p-lg-0">
+                    <div className="d-flex flex-column">
+                        <div className="d-lg-none d-md-none welcome-message-mobile my-3">Good morning! <br />Mario</div>
                         {addingCity ? (
-                            <div className="col-xs-12">
+                            <div className="">
                                 <SearchCity type={1} />
                                 <div onClick={e => setAddingCity(false)} className="text-center text-uppercase close-button my-3">
                                     <small><u>close</u></small>
@@ -44,12 +45,12 @@ const HomeComponent = () => {
                         {
                             state.cities.map((city, index) => {
                                 return (
-                                    <Fragment>
-                                        <div className={index % 2 == 0 ? "col-xs-12 d-none d-lg-flex" : "col-xs-12 d-none d-lg-flex small-city-black"}>
+                                    <Fragment key={index}>
+                                        <div className={index % 2 == 0 ? "d-none d-lg-flex" : "d-none d-lg-flex small-city-black"}>
                                             <SmallCity city={city} />
                                         </div>
-                                        <div className="col-xs-12 d-lg-none">
-                                            <Link to="/main-desktop"><SmallCity className="add-city-searchbox" city={city} /></Link>
+                                        <div className="d-lg-none">
+                                            <Link to="/main-mobile"><SmallCity className="add-city-searchbox" city={city} /></Link>
                                         </div>
                                     </Fragment>
                                 )
@@ -68,7 +69,7 @@ const HomeComponent = () => {
                 <div className="col-xl-12 col-xxl-4 d-flex flex-column justify-content-between mt-xl-4">
                     <div className="row">
                         <div className="col-lg-6 col-xl-6 col-xxl-12">
-                            <SearchCity type="0" />
+                            <SearchCity type={0} />
                         </div>
                         <div className="col-lg-6 col-xl-6 col-xxl-12">
                             <Location />
@@ -76,7 +77,7 @@ const HomeComponent = () => {
                     </div>
                 </div>
             </div>
-        </Fragment>
+        </div>
     )
 }
 

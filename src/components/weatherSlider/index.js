@@ -63,16 +63,16 @@ const WeatherSlider = ({ tab }) => {
                         pagination={{ el: '.custom-pagination', clickable: true }}
                     >
                         {
-                            state.currentCity.daily.map((day) => {
+                            state.currentCity.daily.map((day, index) => {
                                 return (
-                                    <SwiperSlide>
+                                    <SwiperSlide key={index}>
                                         <div className="forecast-item ">
                                             <div className="forecast-day">
                                                 {formatDate(day.dt * 1000)}
                                             </div>
                                             <div className="forecast-temp">
                                                 {Math.round(day.temp.day)}&deg;
-                                </div>
+                                            </div>
                                             <div className="forecast-day">
                                                 <img src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`} alt="weather icon" />
                                             </div>

@@ -1,3 +1,6 @@
+.searchCity{
+    padding: 12px;
+}
 .custom-input-group{
     height: 140px;
     position: relative;
@@ -14,7 +17,7 @@
     font-size: 28px;
     line-height: 42px;
     font-weight: 600;
-    padding: 50px 40px;
+    padding: 40px;
     &:focus{
         outline: none;
     }

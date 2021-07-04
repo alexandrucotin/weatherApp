@@ -18,5 +18,10 @@ export const getFullCityData = async (lat, lon) => {
 export const getCityNameFromGeocoding = async (lat, lon) => {
   const request = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&sensor=true&key=${GOOGLE_API_KEY}`);
   const data = await request.json();
+  data.results.forEach((result, index) => {
+    if (result.types.includes("locality")) {
+      data.results[0] = result
+    }
+  })
   return data;
 };

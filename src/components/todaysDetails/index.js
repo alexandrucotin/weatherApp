@@ -23,7 +23,7 @@ const TodaysDetails = () => {
                         }).map((filteredTemp, index) => {
                             if (index === 0) {
                                 return (
-                                    <div className="row mb-4">
+                                    <div key={index} className="row mb-4">
                                         <div className="col-md-12 text-center now hidden-xs">Now</div>
                                         <div className="col-xs-3 col-md-5 big-temp">{Math.round(filteredTemp.temp)}&deg;</div>
                                         <div className="col-xs-3 col-md-2 d-flex align-items-center justify-content-center">
@@ -33,7 +33,7 @@ const TodaysDetails = () => {
                                 )
                             } else {
                                 return (
-                                    <div className="row  mb-4">
+                                    <div key={index} className="row  mb-4">
                                         <div className="col-xs-4 col-md-5 small-temp">{Math.round(filteredTemp.temp)}&deg;</div>
                                         <div className="col-xs-4 col-md-2 d-flex align-items-center justify-content-center">
                                             <div className="small-bullet"></div>

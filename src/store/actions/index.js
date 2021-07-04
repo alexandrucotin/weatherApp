@@ -6,12 +6,12 @@ const initialData = {
         lon: 0.1278
     },
     city_1: {
-        lat: 51.5074, // LONDON
-        lon: 0.1278
+        lat: 45.0703393, // Turin
+        lon: 7.686864
     },
     city_2: {
-        lat: 45.4167, // Verona
-        lon: 11.0333
+        lat: 45.43838419999999, // Verona
+        lon: 10.9916215
     }
 }
 

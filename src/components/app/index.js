@@ -23,7 +23,7 @@ import Loader from "react-loader-spinner";
 // COMPONENTS
 import MobileNav from "../mobileNav/mobileNav";
 import HomeComponent from "../home"
-import DetailsMobileComponent from "../detailsWeatherMobile"
+import DetailsWeatherComponent from "../detailsWeatherMobile"
 import SearchCity from "../searchCity";
 import Location from "../location";
 
@@ -52,12 +52,17 @@ const App = () => {
                             /></div>
                     }
 
-                    <div className="p-lg-4">
+                    <div className="py-lg-5">
                         <Switch>
                             <Route path="/" exact component={HomeComponent} />
-                            <Route path="/search" exact component={SearchCity} />
+                            <Route
+                                path='/search'
+                                render={() => (
+                                    <SearchCity type={0} />
+                                )}
+                            />
                             <Route path="/location" exact component={Location} />
-                            <Route path="/main-desktop" exact component={DetailsMobileComponent} />
+                            <Route path="/main-mobile" exact component={DetailsWeatherComponent} />
                         </Switch>
                     </div>
                     <div className="d-lg-none d-xl-none">

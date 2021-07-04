@@ -1,17 +1,16 @@
 
-import { Fragment, useState } from "react";
-import plus from "../../assets/Plus.png";
-import TodaysDetails from "../todaysDetails";
-import FuturesDetails from "../futureDetails";
+import { Fragment } from "react";
+import plusIcon from "../../assets/Plus_White.png";
+import backIcon from "../../assets/Arrow-Left.png";
 import WeatherSlider from "../weatherSlider"
 
 import Moment from 'react-moment';
 import './detailsWeatherMobile.scss';
 
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
-const DetailsMobileComponent = () => {
-    const [addingCity, setAddingCity] = useState(false)
+const DetailsWeatherComponent = () => {
     const state = useSelector((state) => state);
 
     return (
@@ -19,7 +18,15 @@ const DetailsMobileComponent = () => {
             <div className="linear-background py-5 mb-5 px-3">
                 <div className="currentWeather-mobile">
                     <div className="contentBox-mobile">
-                        <h2 className="address-mobile">{state.currentCity.cityInfo.results[0].formatted_address.split(",")[0]}</h2>
+                        <div className="d-flex justify-content-between">
+                            <NavLink to="/" exact={true} >
+                                <img src={backIcon} alt="back icon" className="" />
+                            </NavLink>
+                            <h2 className="address-mobile">{state.currentCity.cityInfo.results[0].formatted_address.split(",")[0]}</h2>
+                            <NavLink to="/" exact={true} >
+                                <img src={plusIcon} alt="add city icon" className="" />
+                            </NavLink>
+                        </div>
                         <div className="date-mobile"><Moment date={state.currentCity.current.dt * 1000} format="D MMM YYYY" /> </div>
                         <div className="forecast-mobile">{state.currentCity.current.weather[0].main}</div>
                         <div className="d-flex align-items-center justify-content-around">
@@ -71,4 +78,4 @@ const DetailsMobileComponent = () => {
     )
 }
 
-export default DetailsMobileComponent;
+export default DetailsWeatherComponent;

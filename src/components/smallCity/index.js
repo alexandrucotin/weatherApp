@@ -12,7 +12,7 @@ const SmallCity = ({ city }) => {
     return (
         <div className="miniatureCity" onClick={(e) => changeCurrentCity(city)}>
             <div className="minCity-details">
-                <h2>{city.cityInfo.results[0].formatted_address.split(",")[0]}</h2>
+                <h2 className="m-0">{city.cityInfo.results[0].formatted_address.split(",")[0]}</h2>
                 <div className="date"><Moment date={city.current.dt * 1000} format="D MMM YYYY" /> </div>
                 <div className="hours"><Moment date={city.current.dt * 1000} format="h:mm a" /> </div>
             </div>

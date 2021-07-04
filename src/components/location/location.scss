@@ -1,7 +1,10 @@
 .location{
+    @media (max-width: 768px) {
+    padding: 12px;
+    }
 }
 
-.Location-container{
+.location-container{
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -13,7 +16,7 @@
     border-radius: 25px;
 }
 
-.Location-label{
+.location-label{
     color: #FFFFFF;
     font-size: 28px;
     font-weight: 600;

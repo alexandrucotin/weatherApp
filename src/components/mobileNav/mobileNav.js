@@ -1,29 +1,31 @@
 
 import "./mobileNav.scss"
-import home from "../../assets/Home.png"
-import search from "../../assets/Search_dark.png"
-import location from "../../assets/Location_dark.png"
-import { Link } from "react-router-dom";
+import homeIcon from "../../assets/Home.png"
+import searchIcon from "../../assets/Search_dark.png"
+import locationIcon from "../../assets/Location_dark.png"
+import { NavLink } from "react-router-dom";
+
 const MobileNav = () => {
+
 
     return (
         <div className="mobile-nav-container">
             <div className="mobile-nav d-flex align-items-center justify-content-around">
-                <Link to="/">
-                    <div className="bottom-bar-item">
-                        <img src={home} alt="homepage icon" />
+                <NavLink to="/" exact={true} activeClassName="active">
+                    <div className="bottom-bar-item ">
+                        <img src={homeIcon} alt="homepage icon" />
                     </div>
-                </Link>
-                <Link to="/search">
+                </NavLink>
+                <NavLink to="/search" activeClassName="active">
                     <div className="bottom-bar-item">
-                        <img src={search} alt="search icon" />
+                        <img src={searchIcon} alt="search icon" />
                     </div>
-                </Link>
-                <Link to="/location">
+                </NavLink>
+                <NavLink to="/location" activeClassName="active">
                     <div className="bottom-bar-item">
-                        <img src={location} alt="location icon" />
+                        <img src={locationIcon} alt="location icon" />
                     </div>
-                </Link>
+                </NavLink>
             </div>
         </div>
     )
