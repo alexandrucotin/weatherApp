@@ -22,11 +22,11 @@ const SearchCity = ({ type }) => {
     const history = useHistory();
 
     const handleChange = address => {
-        console.log(address)
         setAddress(address);
     };
 
     const handleSelect = address => {
+        console.log(address)
         setAddress(address)
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
@@ -35,7 +35,6 @@ const SearchCity = ({ type }) => {
 
             })
             .then(() => {
-                console.log(isMobile)
                 if (isMobile && type === 0) {
                     history.push('/main-mobile')
                 }
@@ -50,7 +49,6 @@ const SearchCity = ({ type }) => {
             </div>
             <div>
                 <PlacesAutocomplete
-                    key={address.id}
                     value={address}
                     onChange={(e) => handleChange(e)}
                     onSelect={(e) => handleSelect(e)}
@@ -66,11 +64,10 @@ const SearchCity = ({ type }) => {
                             <div className="searchIcon"><img src={search} alt="searchbar" /></div>
                             <div className="autocomplete-dropdown-container">
                                 {loading && <div>Loading...</div>}
-                                {suggestions.map(suggestion => {
+                                {suggestions.map((suggestion, index) => {
                                     const className = suggestion.active
                                         ? 'suggestion-item--active'
                                         : 'suggestion-item';
-                                    // inline style for demonstration purpose
                                     const style = suggestion.active
                                         ? { backgroundColor: '#fafafa', cursor: 'pointer' }
                                         : { backgroundColor: '#ffffff', cursor: 'pointer' };
@@ -80,7 +77,9 @@ const SearchCity = ({ type }) => {
                                                 className,
                                                 style,
                                             })}
+                                            key={index}
                                             className="px-3 py-2"
+
                                         >
                                             <span>{suggestion.description}</span>
                                         </div>

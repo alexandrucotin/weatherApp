@@ -49,7 +49,7 @@ const DetailsWeatherComponent = () => {
                         }).map((filteredTemp, index) => {
                             if (index === 0) {
                                 return (
-                                    <div className="row mx-3">
+                                    <div className="row mx-3" key={index}>
                                         <div className="time-now col-xs-12">Now</div>
                                         <div className="col-xs-12 d-flex justify-content-center">
                                             <div className="big-bullet"></div>
@@ -59,7 +59,7 @@ const DetailsWeatherComponent = () => {
                                 )
                             } else {
                                 return (
-                                    <div className="row mx-3 text-center">
+                                    <div className="row mx-3 text-center" key={index}>
                                         <div className="time-mobile col-xs-12"><Moment date={filteredTemp.dt * 1000} format="H a" /> </div>
                                         <div className="col-xs-12 d-flex justify-content-center">
                                             <div className="small-bullet"></div>

@@ -46,7 +46,7 @@ const HomeComponent = () => {
                             state.cities.map((city, index) => {
                                 return (
                                     <Fragment key={index}>
-                                        <div className={index % 2 == 0 ? "d-none d-lg-flex" : "d-none d-lg-flex small-city-black"}>
+                                        <div className={index % 2 === 0 ? "d-none d-lg-flex" : "d-none d-lg-flex small-city-black"}>
                                             <SmallCity city={city} />
                                         </div>
                                         <div className="d-lg-none">

@@ -1,4 +1,4 @@
-import { getOneCallWeather, getFullCityData } from '../../services/apiServices';
+import { getFullCityData } from '../../services/apiServices';
 
 const initialData = {
     currentCity: {
